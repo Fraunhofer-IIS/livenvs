@@ -61,7 +61,7 @@ TODO
 
 ## TODOs
 
-[] Add some gifs to the readme
-[] Add citation and link to paper
-[] Fix use of frustum culling results
-[] Provide resolution independent network trace
+- [] Add some gifs to the readme
+- [] Add citation and link to paper
+- [] Fix use of frustum culling results
+- [] Provide resolution independent network trace
