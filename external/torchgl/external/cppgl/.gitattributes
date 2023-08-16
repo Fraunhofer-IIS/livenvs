@@ -1,0 +1,3 @@
+*.so -crlf
+*.so.* -crlf
+*.sh -crlf

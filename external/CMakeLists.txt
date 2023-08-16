@@ -1,0 +1,2 @@
+add_subdirectory(torchgl)
+add_subdirectory(thirdparty)

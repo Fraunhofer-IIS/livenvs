@@ -1,0 +1,39 @@
+//Compute Shader Example
+// this shader takes one input texture bound to location 0 and outputs it in greyscale to an image bound to binding 0,
+// using one shader invocation with one thread for each pixel
+#version 430
+
+
+// use a usual opengl texture as input
+layout(location = 0) uniform sampler2D input_texture;
+
+// use a opengl texture, bound as an image (writable texture) as output
+// important: a format identifier is necessary for images
+// important: "binding" slots are different to "location" slots, thus input and output are not bound to the same texture!!!
+layout(binding = 0, rgba32f) uniform image2D output_image;
+
+
+// this layout qualifier establishes the size of the threadgroups in one block (in this case 32x32 = 1024 threads)
+// using the cppgl framework, this layout is handled implicitly. (But this line must be present anyway)
+layout(local_size_x = 32, local_size_y = 32) in;
+
+void main(void){
+
+	// this gives the global identification of each thread (here: called "gid" in short)
+	// the example shader is launched with one thread for each pixel of the context resolution, 
+	// thus "gid" can be used to access the pixel which the thread should work on
+	ivec2 gid = ivec2(gl_GlobalInvocationID.xy);
+
+	// https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
+	// texelFetch is similar to a texture()-call, but with explicit pixel access coordinates ("gid" is in range [0,Context::resolution-1]) and mipmap-level (in this case 0)
+	vec4 input_col = texelFetch(input_texture, gid, 0);
+
+	//convert input to greyscale
+	vec4 out_col = vec4(vec3(length(input_col.rgb)),1.0);
+
+	//write the output color to pixel at position gid
+	imageStore(output_image, gid, out_col);
+
+	return;
+}
+

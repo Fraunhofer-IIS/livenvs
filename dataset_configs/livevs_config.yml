@@ -1,0 +1,6 @@
+root_dir: ../data/testdata-house/ 
+type: tum
+image_dir: color_keyframes/ 
+depth_dir: depth_keyframes/ 
+image_file_ending: .png
+depth_file_ending: .png

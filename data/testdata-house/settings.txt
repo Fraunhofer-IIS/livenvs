@@ -1,0 +1,1 @@
+{'Contrast': 4, 'Hue': 0, 'Saturation': 4, 'Sharpness': 4, 'Gain': 1, 'Gamma': 8, 'Exposure': 2, 'White Balance': 4400, 'Brightness': 4}

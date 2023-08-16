@@ -1,0 +1,9 @@
+build_ubuntu:
+    stage: build
+    image: ubuntu
+    tags: 
+        - ubuntu
+    script:
+        - apt-get update && apt-get upgrade -y
+        - DEBIAN_FRONTEND=noninteractive nice apt-get install -y build-essential libgomp1 cmake libx11-dev xorg-dev libopengl-dev freeglut3-dev
+        - cmake -S . -B build -DCPPGL_BUILD_EXAMPLES=ON -DCMAKE_BUILD_TYPE=Release -Wno-dev && nice cmake --build build --parallel
