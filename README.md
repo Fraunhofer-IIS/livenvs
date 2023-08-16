@@ -1,6 +1,7 @@
 # LiveNVS 
 
-Official repository of the paper "LiveNVS".
+Official repository.
+
 ![teaser](teaser.png)
 
 
@@ -61,7 +62,7 @@ TODO
 
 ## TODOs
 
-- [] Add some gifs to the readme
-- [] Add citation and link to paper
-- [] Fix use of frustum culling results
-- [] Provide resolution independent network trace
+- [ ] Add some gifs to the readme
+- [ ] Add citation and link to paper
+- [ ] Fix use of frustum culling results
+- [ ] Provide resolution independent network trace
