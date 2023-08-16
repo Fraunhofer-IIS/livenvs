@@ -1,9 +1,8 @@
 # LiveNVS 
 
-## Description
-TODOs
-* paper link, teaser fig
-* video gif animation
+Official repository of the paper "LiveNVS".
+![teaser](teaser.png)
+
 
 ## Prerequisites
 
@@ -56,3 +55,13 @@ See the exemplary ```settings.json``` and ```launch.json``` in ```./example_vsco
     * "Render Mode" to switch between neural and non-neural mode / forward and deferred warping mode
     * Using more "Num Views" than "Cache Size" available will cause undefined behavior
   
+## Citation
+
+TODO
+
+## TODOs
+
+[] Add some gifs to the readme
+[] Add citation and link to paper
+[] Fix use of frustum culling results
+[] Provide resolution independent network trace
