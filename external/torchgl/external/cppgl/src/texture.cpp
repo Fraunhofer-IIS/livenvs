@@ -110,9 +110,6 @@ Texture2DImpl::Texture2DImpl(const std::string& name, const fs::path& path, bool
     glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
     glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0);
     glPixelStorei(GL_UNPACK_SKIP_ROWS, 0);
-    std::cout << "things" << std::endl;
-    std::cout << data[60] << std::endl;
-    std::cout << "after data" << std::endl;
 
     glTexImage2D(GL_TEXTURE_2D, 0, internal_format, w, h, 0, format, type, &data[0]);
     if (mipmap) glGenerateMipmap(GL_TEXTURE_2D);

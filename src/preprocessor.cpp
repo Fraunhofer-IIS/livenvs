@@ -237,7 +237,7 @@ SingleViewGeometry Preprocessor::process_entry_from_depthmaps(const DatasetEntry
 
                 min_d = data_16_copy[0]/1000.0;
                 max_d = data_16_copy[data_16_copy.size()-1]/1000.0;
-                std::cout << "Valid Min " << min_d << ", Max " << max_d << std::endl;
+                std::cout << "Valid depth range: Min " << min_d << ", Max " << max_d << std::endl;
                 
 
                 for(int i =0; i < wi*hi; ++i) {
@@ -255,7 +255,7 @@ SingleViewGeometry Preprocessor::process_entry_from_depthmaps(const DatasetEntry
                 int kernel_radius = 2;
 
                 float sum = 0;
-                std::cout << "filter " << std::endl;
+                std::cout << "Filter depth map." << std::endl;
                 for (uint32_t y = kernel_radius; y < hi-(kernel_radius+1); ++y){
                     for (uint32_t x = kernel_radius; x < wi-(kernel_radius+1); ++x){
                             float cur = data[linear_index(x,y,wi)]; // XXX 
@@ -277,10 +277,6 @@ SingleViewGeometry Preprocessor::process_entry_from_depthmaps(const DatasetEntry
                     }
                 }
 
-                std::cout << sum << std::endl;
-
-
-                std::cout << "project " << std::endl;
                 for(int i =0; i < wi*hi; ++i) {      
                     // adapt to gl convention (missing depth is at far)
                     if (data_filtered[i] < 0.01)

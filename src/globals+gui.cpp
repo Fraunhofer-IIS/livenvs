@@ -15,6 +15,8 @@ void globals_n_gui::gui_callback(){
 
     static bool show_svg_menu = false;
     if (ImGui::Begin("Project GUI", &show_project_gui)) {
+        ImGui::Text("Please note the third party licenses available at \n https://github.com/Fraunhofer-IIS/livenvs/tree/main/third_party_legal_notices");
+        ImGui::Separator();
         ImGui::Text("Memory Consumption");
         size_t free_mem, total_mem;
         cudaMemGetInfo(&free_mem, &total_mem);
@@ -30,7 +32,7 @@ void globals_n_gui::gui_callback(){
             {"Color Forward", SingleViewGeometryImpl::DrawMode::COL_FORWARD},
             {"Neural Forward", SingleViewGeometryImpl::DrawMode::N_FORWARD},
             {"Neural Deferred", SingleViewGeometryImpl::DrawMode::N_DEFERRED} };
-        static std::string cur_label = "Color Forward";
+        static std::string cur_label = "Neural Deferred";
         if (ImGui::BeginCombo("Render Mode", cur_label.c_str())) // The second parameter is the label previewed before opening the combo.
         {
             for (const auto& [label, mode] : labels_to_mode)

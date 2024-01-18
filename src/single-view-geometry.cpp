@@ -13,7 +13,7 @@ extern globals_n_gui gg;
 
 std::vector<Drawelement> SingleViewGeometryImpl::prototype_hq;
 std::vector<Drawelement> SingleViewGeometryImpl::prototype_lq;
-SingleViewGeometryImpl::DrawMode SingleViewGeometryImpl::mode = SingleViewGeometryImpl::DrawMode::COL_FORWARD;
+SingleViewGeometryImpl::DrawMode SingleViewGeometryImpl::mode = SingleViewGeometryImpl::DrawMode::N_DEFERRED;
 
 
 static uint32_t linear_index(const uint32_t x, const uint32_t y, const uint32_t w){

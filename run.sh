@@ -9,6 +9,7 @@ export CUDAHOSTCXX=g++-9
 mkdir build
 cd build
 export CONDA=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH};${CONDA}/lib"
 cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH="${CONDA}/lib/python3.9/site-packages/torch/;${CONDA}" ..
 make -j && cd ../src && ./livenvs \
     --datasets=../dataset_configs/livevs_config.yml \
