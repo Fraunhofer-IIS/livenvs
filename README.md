@@ -1,8 +1,30 @@
-# LiveNVS 
+# LiveNVS: Neural View Synthesis on Live RGB-D Streams
+by Laura Fink, Darius Rueckert, Linus Franke, Joachim Keinert, and Marc Stamminger
 
-Official repository.
 
 ![teaser](teaser.png)
+
+Official repository   |   [Link to project page](https://lorafib.github.io/livenvs/)   |   [My home page](https://lorafib.github.io/)
+
+Abstract: 
+Existing real-time RGB-D reconstruction approaches, like Kinect Fusion, lack real-time photo-realistic visualization. This is due to noisy, oversmoothed or incomplete geometry and blurry textures which are fused from imperfect depth maps and camera poses. Recent neural rendering methods can overcome many of such artifacts but are mostly optimized for offline usage, hindering the integration into a live reconstruction pipeline.
+
+In this paper, we present LiveNVS, a system that allows for neural novel view synthesis on a live RGB-D input stream with very low latency and real-time rendering. Based on the RGB-D input stream, novel views are rendered by projecting neural features into the target view via a densely fused depth map and aggregating the features in image-space to a target feature map. A generalizable neural network then translates the target feature map into a high-quality RGB image. LiveNVS achieves state-of-the-art neural rendering quality of unknown scenes during capturing, allowing users to virtually explore the scene and assess reconstruction quality in real-time. 
+
+
+
+  
+## Citation
+
+```
+@inproceedings{fink2023livenvs,
+  title={LiveNVS: Neural View Synthesis on Live RGB-D Streams},
+  author={Fink, Laura and R{\"u}ckert, Darius and Franke, Linus and Keinert, Joachim and Stamminger, Marc},
+  booktitle={SIGGRAPH Asia 2023 Conference Papers},
+  pages={1--11},
+  year={2023}
+}
+```
 
 
 ## Prerequisites
@@ -55,14 +77,4 @@ See the exemplary ```settings.json``` and ```launch.json``` in ```./example_vsco
     * "Show SVG Menu" will show currently used views, the upmost checkbox "Draw Selected Frusta" addiationally draws their tiny frusta in the scene 
     * "Render Mode" to switch between neural and non-neural mode / forward and deferred warping mode
     * Using more "Num Views" than "Cache Size" available will cause undefined behavior
-  
-## Citation
 
-TODO
-
-## TODOs
-
-- [ ] Add some gifs to the readme
-- [ ] Add citation and link to paper
-- [ ] Fix use of frustum culling results
-- [ ] Provide resolution independent network trace
