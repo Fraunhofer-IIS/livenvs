@@ -190,7 +190,7 @@ int main(int argc, const char** argv) {
     const std::string arg_write_keyframes_colmap_dir(result["write_keyframes_colmap_dir"].as<std::string>());
     if (arg_preload_dataset && active_dataset ){
         std::cout <<  "-------------------------------------" << std::endl << "Process dataset " << std::endl;
-        if (!active_dataset->mesh_path.empty()) {
+        if (std::filesystem::is_regular_file(active_dataset->mesh_path)) {
             preprocessor->process_dataset_from_mesh(*active_dataset, arg_max_images, arg_freq_images);
         } else {
             if (arg_find_keyframes){

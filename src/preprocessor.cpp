@@ -228,8 +228,8 @@ SingleViewGeometry Preprocessor::process_entry_from_depthmaps(const DatasetEntry
                     }
                 }
                 
-                std::cout << "Depth Map orig linear size: " << data_16.size() << std::endl;
-                std::cout << "Depth Map linear size without 0s: " << data_16_copy.size() << std::endl;
+                // std::cout << "Depth Map orig linear size: " << data_16.size() << std::endl;
+                // std::cout << "Depth Map linear size without 0s: " << data_16_copy.size() << std::endl;
 
                 std::sort(data_16_copy.begin(), data_16_copy.end());
                 // approximate median, not correct for uneven size
