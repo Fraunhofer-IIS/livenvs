@@ -12,8 +12,9 @@ Existing real-time RGB-D reconstruction approaches, like Kinect Fusion, lack rea
 In this paper, we present LiveNVS, a system that allows for neural novel view synthesis on a live RGB-D input stream with very low latency and real-time rendering. Based on the RGB-D input stream, novel views are rendered by projecting neural features into the target view via a densely fused depth map and aggregating the features in image-space to a target feature map. A generalizable neural network then translates the target feature map into a high-quality RGB image. LiveNVS achieves state-of-the-art neural rendering quality of unknown scenes during capturing, allowing users to virtually explore the scene and assess reconstruction quality in real-time. 
 
 
+Notes: 
+For the sake of simplicity, this project only supports novel view synthesis for pre-recorded datasets without the interface to the SLAM module or camera SDKs. COLMAP, scannet, and tum formats are supported for camera poses. Besides, we are currently considering to publish the datasets recorded for this publication. If a full prototype or (early) access to the dataset is of interest for you, drop me a mail (Laura Fink) or open an issue.
 
-  
 ## Citation
 
 ```
